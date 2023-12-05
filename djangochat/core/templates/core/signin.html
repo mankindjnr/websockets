@@ -1,0 +1,30 @@
+{% extends "core/base.html" %}
+
+{% block title %}signin{% endblock %}
+
+{% block content %}
+
+<div class="p-10 lg:p-20 text-center">
+    <h1 class="text-3xl lg:text-6xl text-white">Signup</h1>
+</div>
+
+<form method="post" action="{% url 'login_view' %}" class="lg:w-1/4 px-4 mx-auto">
+    {% csrf_token %}
+
+    <div class="mb-5">
+        <label class="text-white">Username</label>
+        <input type="text" name="username" class="w-full px-4 mt-2 py-2 rounded-xl bg-teal-800 text-white" />
+    </div>
+
+    <div class="mb-5">
+        <label class="text-white">Password</label>
+        <input type="password" name="password" class="w-full px-4 mt-2 py-2 rounded-xl bg-teal-800 text-white" />
+    </div>
+
+   <div class="mb-5">
+        <button type="submit" class="px-5 py-3 rounded-xl bg-teal-800 text-white hover:bg-teal-600">LOGIN</button>
+    </div>
+
+</form>
+
+{% endblock %}
